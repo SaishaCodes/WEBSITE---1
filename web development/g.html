@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Adventures - Sunny Bakery Challenge</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        .instructions {
+            width: 30%;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+        .editor {
+            width: 40%;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+        .preview {
+            width: 30%;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>Sunny Bakery Challenge</h2>
+        <p>Create a webpage for "Sunny Bakery" with the following elements:</p>
+        <ol>
+            <li>A heading with the bakery's name.</li>
+            <li>A paragraph describing the bakery.</li>
+            <li>An image of a loaf of bread.</li>
+            <li>A list of available products.</li>
+        </ol>
+        <button onclick="showHint()">Hint</button>
+        <p id="hint" style="display:none;">Use the <code>&lt;h1&gt;</code> tag for the heading, <code>&lt;p&gt;</code> for paragraphs, and <code>&lt;img&gt;</code> for images. For lists, use <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>.</p>
+    </div>
+    <div class="editor">
+        <h2>Code Editor</h2>
+        <textarea id="code" style="width: 100%; height: 300px;"></textarea>
+        <button onclick="updatePreview()">Update Preview</button>
+    </div>
+    <div class="preview">
+        <h2>Live Preview</h2>
+        <iframe id="preview" style="width: 100%; height: 300px; border: 1px solid #ddd;"></iframe>
+    </div>
+
+    <script>
+        function showHint() {
+            document.getElementById('hint').style.display = 'block';
+        }
+
+        function updatePreview() {
+            var code = document.getElementById('code').value;
+            var previewFrame = document.getElementById('preview');
+            var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+            preview.open();
+            preview.write(code);
+            preview.close();
+        }
+    </script>
+</body>
+</html>

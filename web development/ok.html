@@ -1,0 +1,672 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html>
+	<head>
+		
+		
+		
+		<script type="text/javascript">
+			var basePath 				= "/aims";
+			var versionPath 			= "/aims/version1.0.93";
+			var loginId 				= "SAISHA SURESH BORE";
+			var currentDate 			= "28 May, 2024";
+			var currentTime 			= "20:56";
+			var currentDateTime 		= "28 May, 2024 20:56";
+			var appDefYrStart 			= "1950";
+			var defaultDate 			= "dd M, yy";
+			var defaultMonthYear 		= "M, yy";
+			var defaultTime 			= "hh:mm";
+			var defaultDateTime 		= "dd M, yy";
+			var defaultPageSize 		= "15";
+			var infiniteDt				= "31 Dec, 9999";
+			var appDefaultDropDownVal 	= -1;
+			var contentTypeJson			= "application/json;charset=UTF-8";
+			var encryptionDefMode 		= 2;
+			var encrApplicationMode 	= 1;
+			var encrSessionMode 		= 2;
+			var appCurrTopPlainUri		= "";
+			var appEsigSecReqKey		= "appEsigSecReqKey";
+			var appEsigSecTypeOTP		= 1;
+			var appEsigSecTypeCaptcha	= 2;
+			var securityData 			= {"entityId":0,"topURL":"/login/home","isSecurityRequired":false,"OTP":1,"CAPTCHA":2,"LOGINUSERPWD":3}
+			var esigKey 				= "appEsigSecReqKey";
+			var groupWebsite	 		= "https://www.iiitdwd.ac.in";
+			var hasGroupWebsite	 		= true;
+			var popupCloseKeycode		= 27;
+			var applicationSourceId 	= -1;
+			var aimsApp					= -1;
+			var employerApp				= 10;
+			var facultyApp				= 19;
+			var phdAdmApp				= 24;
+			var mtechAdmApp				= 25;
+			var mdesAdmApp				= 27;
+			var mphilAdmApp				= 26;
+			var executiveMtechAdmApp	= 28;
+			var recStaffApp				= 20;
+		</script>
+		<script src="/aims/version1.0.93/js/common/json2.js" type="text/javascript"></script>
+		<script src="/aims/version1.0.93/js/common/jquery.js" type="text/javascript"></script>
+		<script src="/aims/version1.0.93/js/common/layout.js" type="text/javascript"></script>
+		<script src="/aims/version1.0.93/js/common/plianto-security.js" type="text/javascript"></script>
+		<script src="/aims/version1.0.93/js/common/header.js" type="text/javascript"></script>
+	 
+		<link href="/aims/version1.0.93/css/common/header.css" rel="stylesheet" type="text/css" />
+		<link href="/aims/version1.0.93/css/common/layout.css" rel="stylesheet" type="text/css" />
+		<link href="/aims/version1.0.93/css/common/new_layout.css" rel="stylesheet" type="text/css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="/aims/version1.0.93/images/company/title_img.png" rel="shortcut icon" /> 
+	 	<title>IIIT-DHARWAD-AIMS-LIVE Instance</title> 
+	</head>
+	<body id="body">
+		<input id="reloadValue" type="hidden" name="reloadValue" value="" />
+		<input id="pbky" type="hidden" name="pbky" value="null"/>
+		
+		<script type="text/javascript">
+			var reloadInd 		= false;
+			var ctrlDown 		= false;
+			var ctrlKey = 17, f5Key = 116, rKey = 82;
+			/*
+			 * This script is to refresh the page if the current page is loaded by pressing back button
+			 */
+	       	jQuery(document).ready(function() {
+	   			$(document).keydown(function( e ) {
+	   			    if( e.keyCode == f5Key ) {
+	   			        //F5 pressed. Copy your code here or try
+	   			        //It will avoid if-modified-since requests.
+	   			        e.preventDefault( );
+	   			        reloadInd = true;
+			    		localStorage.isAimsPageLoaded = true;
+	   	                location.reload();
+	   			    } else if( e.keyCode == ctrlKey ) {
+				        ctrlDown = true;
+	   			    } else if( ctrlDown && ( e.keyCode == rKey ) ) {
+	   			        //Ctrl + R pressed. Do whatever you want
+				        //or copy the same code here that you did above
+				        e.preventDefault( );
+				        reloadInd = true;
+			    		localStorage.isAimsPageLoaded = true;
+		                location.reload();
+				    }
+	   			}).keyup(function(e) {
+	   			    if (e.keyCode == ctrlKey) {
+	   			        ctrlDown = false;
+	   			    }
+	   			});
+	           	var d = new Date();
+	          	d = d.getTime();
+	         	if (jQuery('#reloadValue').val().length == 0) {
+	                jQuery('#reloadValue').val(d);
+	                jQuery('body').show();
+	            } else {
+	            	jQuery('#reloadValue').val('');
+		    		if(	typeof(Storage) !== "undefined" &&
+		    			typeof localStorage.isAimsPageLoaded == "undefined") {
+	                    location.reload();
+		    		}
+		    	}
+			});
+		</script>
+		<div id="popUp" class="popUp"></div>
+		<div id="glair"></div>
+		<div id="loading_bar"><img src="/aims/version1.0.93/images/progress_bar.gif" /></div>
+		<div id="main">
+			<div id="maintable"  style="padding: 0x;">
+			    <div class="headMain" style="background: #003366">
+			    	<div class="header">
+			       		
+
+<div class="menuIdmainDiv">
+	<div class="logoMainDiv" style="padding-top: 0;">
+		<div class="logoDiv" style="margin-top: 0;">
+			<img class="logo" id="plianto_logo" style="float: left;" src="/aims/base/writeLogoImg" alt="No Logo"></img>
+		</div>
+		<div class="homeDiv">
+			<a id="appHome" href="/aims/login/dashboard" title="Home"></a>
+		</div>
+		<div class="logoutTxt" style="padding-top: 7px;">
+			 <span id="appUsername" onclick="openUserDropDown(this);">SAISHA SURESH BORE</span>
+			 <span id="appUName" onclick="openUserDropDown(this);"></span>
+		</div>
+	</div>
+</div>
+
+					    <div class="errDiv gAppBannerDiv">
+					    	<span class="closeIcon banner"></span>
+				    		<span class="errImg"></span><span id="errTxt"></span>
+					    </div>
+					    <div class="warnDiv gAppBannerDiv">
+					    	<span class="closeIcon banner"></span>
+				    		<span class="warnImg"></span><span id="warnTxt"></span>
+					    </div>
+					    <div class="successDiv gAppBannerDiv">
+					    	<span class="closeIcon banner"></span>
+				    		<span class="successImg"></span><span id="successTxt"></span>
+					    </div>
+			    	</div>
+			    </div>
+			    <div class="clear"></div>
+			    <div class="contentMain">
+		       		<div class="contentMainDiv" >
+				    	
+
+<link href="/aims/version1.0.93/css/common/jquery.treeview.css" rel="stylesheet" type="text/css" />
+<link href="/aims/version1.0.93/css/common/profile-settings.css" rel="stylesheet" type="text/css" />
+
+<script src="/aims/version1.0.93/js/common/jquery.cookie.js"></script>
+<script src="/aims/version1.0.93/js/common/jquery.treeview.js"></script>
+<script src="/aims/version1.0.93/js/common/tab.js"></script>
+<script src="/aims/version1.0.93/js/notifications/list_user_notifications.js"></script>
+<style>
+	 .mnHdr {
+		 background: #CCC;
+		 padding-right: 3px;
+		 padding: 3px;
+		 font-weight: bold;
+	 }
+	 .dshMn {
+	 	border: 2px solid #CCCCCC;
+	 } 
+	 .dshMnBackClr {
+	 	background: #E7E5E4 !important;
+	 }
+	 .mndtls {
+	 	border: medium none;
+	    background: #FBFBFB;
+	    margin-left: 2px;
+	    margin-top: 3px;
+	    padding: 2px;
+	    border: 1px solid #D1D2D3;
+	    float: left;
+	 }
+	 .dashMain {
+	 	border-right: 1px solid #D1D2D3;
+	 	border-left: 1px solid #D1D2D3;
+	 	border-bottom: 1px solid #D1D2D3;
+	 }
+	.tabs {
+		padding-top: 0px;
+		height: 26px;
+	}
+	.tabs ul li {
+		height: 24px;
+	}
+	.tabs ul li span {
+		height: 17px;
+	}
+</style>
+<div class="formHrd">
+	<span>Home</span>
+</div>
+
+<div class="clear"></div>
+<div style="dashMain">
+	<div class="tabs"> 
+		<div style="float: left;">
+			<ul>
+				<li>
+					<span class="menuDtls curntTab cmn dashMTb" tbSNm="menuDtls" tbCNm="dashMTb">Menu</span>
+				</li>
+				<li>
+					<span class="dashboardDtls cmn dashMTb" tbSNm="dashboardDtls" tbCNm="dashMTb">Dashboard</span>
+				</li>
+				<li>
+					<span class="notificationDtls cmn dashMTb" tbSNm="notificationDtls" tbCNm="dashMTb">Notifications</span>
+				</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+	<div class="clear menuDtls content menuDtls_blk dashMTb_cmn">
+		<div id="dashBoardMenuTabContent">
+	<div id="treeMenuDiv" class="mndtls app_db_treeMenuDiv">
+		<ul id="red" class="treeview-red app_db_tree"></ul>
+	</div>
+</div>
+<script type="text/javascript">
+	var data = [{"menuId":18,"name":"Student","desc":"Student","parentId":0,"level":1,"roleId":7}, {"menuId":0,"name":"Request i-Card","desc":"Request i-Card","parentId":18,"level":2,"link":"/commonBa
+
+se/addUserInfo","linkDesc":"Application : Add User Information Details","roleId":7}, {"menuId":167,"name":"My Details","desc":"My Details","parentId":18,"level":2,"roleId":7}, {"menuId":0,"name":"Edit My Details","desc":"Edit My Details","parentId":167,"level":3,"link":"/academicStudent/getPersonalDtlsFromStudent","linkDesc":"ACAD : Edit : Personal Details From Student","roleId":7}, {"menuId":0,"name":"Show My Details","desc":"Show My Details","parentId":167,"level":3,"link":"/academicStudent/studentDetails","linkDesc":"View : Student View My Details","roleId":7}, {"menuId":17,"name":"Academic","desc":"Academic","parentId":18,"level":2,"roleId":7}, {"menuId":124,"name":"Courses","desc":"Courses","parentId":17,"level":3,"roleId":7}, {"menuId":0,"name":"Institute Courses","desc":"Institute Courses","parentId":124,"level":4,"link":"/course/listStudInstCrs","linkDesc":"Academic: Search Institute courses (Student)","roleId":7}, {"menuId":0,"name":"Running Courses","desc":"Running Courses","parentId":124,"level":4,"link":"/deptCourse/listStudRCrs","linkDesc":"Academic: Search Running courses (Student)","roleId":7}, {"menuId":177,"name":"Degree Registration","desc":"Degree Registration","parentId":17,"level":3,"roleId":7}, {"menuId":0,"name":"Entry","desc":"Entry","parentId":177,"level":4,"link":"/acadDegreeReg/addStudDegReg","linkDesc":"Create : Academic Degree Registration","roleId":7}, {"menuId":0,"name":"Search","desc":"Search","parentId":177,"level":4,"link":"/acadDegreeReg/listDegRegDtls","linkDesc":"List : Academic Student Degree Registrations","roleId":7}, {"menuId":0,"name":"Course Registration","desc":"Course Registration","parentId":17,"level":3,"link":"/courseReg/studentReg","linkDesc":"ACAD : Search : Student Course Reg.(Student)","roleId":7}, {"menuId":0,"name":"View My Courses","desc":"View My Courses","parentId":17,"level":3,"link":"/courseReg/myCrsHistoryPage","linkDesc":"ACAD : Search : Student Courses","roleId":7}, {"menuId":0,"name":"Course Drop","desc":"Course Drop","parentId":17,"level":3,"link":"/courseReg/loadAcadperiodForCrsDropping","linkDesc":"Course Drop : List : Academic Periods","roleId":7}, {"menuId":0,"name":"Payment Details","desc":"Payment Details","parentId":17,"level":3,"link":"/academicBase/getListOfPaymentDetails","linkDesc":"List : PAYMENT DETAILS","roleId":7}, {"menuId":30,"name":"Placement","desc":"Placement","parentId":17,"level":3,"roleId":7}, {"menuId":0,"name":"Placement Policy","desc":"Placement  Student Policy","parentId":30,"level":4,"link":"/notify/downloadPlNotification?fN=Student_placement_policy_15_16.pdf","linkDesc":"Placement : Placement Student Policy","roleId":7}, {"menuId":0,"name":"Placement Calendar","desc":"Placement Calendar","parentId":30,"level":4,"link":"/notify/downloadPlNotification?fN=companies_slot_list_2015_20th_Nov.pdf","linkDesc":"Placement : Placement Calendar","roleId":7}, {"menuId":0,"name":"Register for Placement","desc":"Register for Placement","parentId":30,"level":4,"link":"/placement/selfRegisterForPlacement","linkDesc":"Create New : Placement Reg.(by Student)","roleId":7}, {"menuId":0,"name":"My Profile","desc":"My Profile","parentId":30,"level":4,"link":"/plStudent/myProfile","linkDesc":"Create New/Edit : My Profile(Student)","roleId":7}, {"menuId":0,"name":"My eligible ERFs","desc":"My eligible ERFs","parentId":30,"level":4,"link":"/placement/listElgblErf","linkDesc":"Search: My ERFs(Student)","roleId":7}, {"menuId":0,"name":"Notifications","desc":"Notifications","parentId":30,"level":4,"link":"/plStudent/plStudNotifications","linkDesc":"PL : Placement Notifications(Student)","roleId":7}, {"menuId":0,"name":"Certificate Request","desc":"Certificate Request","parentId":17,"level":3,"link":"/academicBase/getListAcadStudentCertTrackDtls","linkDesc":"Academic: LIST OF CERTIFICATE REQUEST","roleId":7}, {"menuId":0,"name":"Scholarship Application","desc":"Scholarship Application","parentId":17,"level":3,"link":"/acadScholarship/listStSchEliAdvlDtls","linkDesc":"Academic: Scholarship : Search Eligible Scholarships(user)","roleId":7}, {"menuId":101,"name":"Hostel","desc":"Hostel","parentId":18,"level":2,"roleId":7}, {"menuId":100,"name":"Mess","desc":"Mess","parentId":101,"level":3,"roleId":7}, {"menuId":0,"name":"Mess Registration","desc":"Mess Registration","parentId":100,"level":4,"link":"/hmMessMgmt/messRegHistory","linkDesc":"HM: Mess: Search Mess Registration history for user","roleId":7}, {"menuId":60,"name":"Reports","desc":"Reports","parentId":18,"level":2,"roleId":7}, {"menuId":0,"name":"Request","desc":"Request","parentId":60,"level":3,"link":"/reportMaster/loadSchedulerPrograms","linkDesc":"APP : Search : Application  Programs(User)","roleId":7}, {"menuId":0,"name":"View","desc":"View","parentId":60,"level":3,"link":"/reportMaster/userAppSchReqList","linkDesc":"Search : Program Requests(User)","roleId":7}];
+	$(function() {
+		var htmlStr 	= '';
+		var currlevel 	= 0;
+		
+		for(var i in data) {
+			var item = data[i];
+			if(item.level == currlevel) {
+				htmlStr += '</li>';
+				htmlStr += '<li>';
+				if(typeof item.link == "undefined") {
+					htmlStr += '	<span title="' + item.desc + '">' + item.name + '</span>';
+					htmlStr += '		<ul>';
+				} else {
+					htmlStr += '	<span class="treeLeaf" title="' + item.desc + '" onclick="return onTreemenuItemClick(' + item.roleId + ', \'' + item.link + '\', this);">' + item.name + '</span>';
+				}
+			} else if(item.level < currlevel) {
+				for(var j = currlevel; j >= item.level; j--) {
+					htmlStr += '	</li>';
+					if(j != item.level) {
+						htmlStr += '</ul>';
+					}
+				}
+				htmlStr += '<li>';
+				if(typeof item.link == "undefined") {
+					htmlStr += '	<span title="' + item.desc + '">' + item.name + '</span>';
+					htmlStr += '		<ul>';
+				} else {
+					htmlStr += '	<span class="treeLeaf" title="' + item.desc + '" onclick="return onTreemenuItemClick(' + item.roleId + ', \'' + item.link + '\', this);">' + item.name + '</span>';
+				}
+			} else if(item.level > currlevel) {
+				htmlStr += '<li>';
+				if(typeof item.link == "undefined") {
+					htmlStr += '	<span title="' + item.desc + '">' + item.name + '</span>';
+					htmlStr += '		<ul>';
+				} else {
+					htmlStr += '	<span class="treeLeaf" title="' + item.desc + '" onclick="return onTreemenuItemClick(' + item.roleId + ', \'' + item.link + '\', this);">' + item.name + '</span>';
+				}
+			}
+			currlevel = item.level; 
+		}
+		for(var j = currlevel; j > 1; j--) {
+			htmlStr += '	</ul>';
+			htmlStr += '</li>';
+		}
+		$("#red").append(htmlStr);
+		var isMnTreeBuilt = $("#red").treeview({
+								animated: "fast",
+								collapsed: true 
+					//			unique: true,
+					//			persist: "cookie"
+		});
+		if($("#red li:first").hasClass("expandable")) {
+			$("#red li:first span:first").click();
+		}
+		
+	});
+	function onTreemenuItemClick(id, link, thisObj) {
+		if($(thisObj).attr("disabled") != "disabled") {
+			if(isCacheSupports) {
+				localStorage.clear();
+			}
+			$(".treeLeaf").attr("disabled", "disabled");
+			if(isMainDashboard) {
+				callAjaxByObj({	"url" : "/base/changeUserRole/" + id, 
+					"type" 	: "POST", 
+					"resp" 	: afterChangeFromMainDBRole(link),
+					"error" : afterChangeFromMainDBRoleErr()
+			  	});
+			} else {
+				redirectToTheReqPage(link);
+			}
+		}
+	}
+
+	function afterChangeFromMainDBRole(link) {
+		return function(response) {
+			redirectToTheReqPage(link);
+		};
+	}
+
+	function afterChangeFromMainDBRoleErr() {
+		return function() {
+			$(".treeLeaf").removeAttr("disabled");
+		};
+	}
+
+</script>
+
+		<div class="clear"></div>
+	</div>
+	<div class="clear dashboardDtls content dashboardDtls_blk dashMTb_cmn" style="display: none;">
+		<div id="dashBoardDashboardTabContent">
+	<div id="treeDashboardDiv" class="mndtls app_db_treeMenuDiv">
+		<ul id="dashboard_tree" class="treeview-red app_db_tree"></ul>
+	</div>
+</div>
+<script type="text/javascript">
+	var dashboardData = [{"menuId":18,"name":"Student","desc":"Student","parentId":0,"level":1,"roleId":7}, {"menuId":0,"name":"Request i-Card","desc":"Request i-Card","parentId":18,"level":2,"link":"/commonBase/addUserInfo","linkDesc":"Application : Add User Information Details","roleId":7}, {"menuId":167,"name":"My Details","desc":"My Details
+2000
+","parentId":18,"level":2,"roleId":7}, {"menuId":0,"name":"Edit My Details","desc":"Edit My Details","parentId":167,"level":3,"link":"/academicStudent/getPersonalDtlsFromStudent","linkDesc":"ACAD : Edit : Personal Details From Student","roleId":7}, {"menuId":0,"name":"Show My Details","desc":"Show My Details","parentId":167,"level":3,"link":"/academicStudent/studentDetails","linkDesc":"View : Student View My Details","roleId":7}, {"menuId":17,"name":"Academic","desc":"Academic","parentId":18,"level":2,"roleId":7}, {"menuId":124,"name":"Courses","desc":"Courses","parentId":17,"level":3,"roleId":7}, {"menuId":0,"name":"Institute Courses","desc":"Institute Courses","parentId":124,"level":4,"link":"/course/listStudInstCrs","linkDesc":"Academic: Search Institute courses (Student)","roleId":7}, {"menuId":0,"name":"Running Courses","desc":"Running Courses","parentId":124,"level":4,"link":"/deptCourse/listStudRCrs","linkDesc":"Academic: Search Running courses (Student)","roleId":7}, {"menuId":177,"name":"Degree Registration","desc":"Degree Registration","parentId":17,"level":3,"roleId":7}, {"menuId":0,"name":"Entry","desc":"Entry","parentId":177,"level":4,"link":"/acadDegreeReg/addStudDegReg","linkDesc":"Create : Academic Degree Registration","roleId":7}, {"menuId":0,"name":"Search","desc":"Search","parentId":177,"level":4,"link":"/acadDegreeReg/listDegRegDtls","linkDesc":"List : Academic Student Degree Registrations","roleId":7}, {"menuId":0,"name":"Course Registration","desc":"Course Registration","parentId":17,"level":3,"link":"/courseReg/studentReg","linkDesc":"ACAD : Search : Student Course Reg.(Student)","roleId":7}, {"menuId":0,"name":"View My Courses","desc":"View My Courses","parentId":17,"level":3,"link":"/courseReg/myCrsHistoryPage","linkDesc":"ACAD : Search : Student Courses","roleId":7}, {"menuId":0,"name":"Course Drop","desc":"Course Drop","parentId":17,"level":3,"link":"/courseReg/loadAcadperiodForCrsDropping","linkDesc":"Course Drop : List : Academic Periods","roleId":7}, {"menuId":0,"name":"Payment Details","desc":"Payment Details","parentId":17,"level":3,"link":"/academicBase/getListOfPaymentDetails","linkDesc":"List : PAYMENT DETAILS","roleId":7}, {"menuId":30,"name":"Placement","desc":"Placement","parentId":17,"level":3,"roleId":7}, {"menuId":0,"name":"Placement Policy","desc":"Placement  Student Policy","parentId":30,"level":4,"link":"/notify/downloadPlNotification?fN=Student_placement_policy_15_16.pdf","linkDesc":"Placement : Placement Student Policy","roleId":7}, {"menuId":0,"name":"Placement Calendar","desc":"Placement Calendar","parentId":30,"level":4,"link":"/notify/downloadPlNotification?fN=companies_slot_list_2015_20th_Nov.pdf","linkDesc":"Placement : Placement Calendar","roleId":7}, {"menuId":0,"name":"Register for Placement","desc":"Register for Placement","parentId":30,"level":4,"link":"/placement/selfRegisterForPlacement","linkDesc":"Create New : Placement Reg.(by Student)","roleId":7}, {"menuId":0,"name":"My Profile","desc":"My Profile","parentId":30,"level":4,"link":"/plStudent/myProfile","linkDesc":"Create New/Edit : My Profile(Student)","roleId":7}, {"menuId":0,"name":"My eligible ERFs","desc":"My eligible ERFs","parentId":30,"level":4,"link":"/placement/listElgblErf","linkDesc":"Search: My ERFs(Student)","roleId":7}, {"menuId":0,"name":"Notifications","desc":"Notifications","parentId":30,"level":4,"link":"/plStudent/plStudNotifications","linkDesc":"PL : Placement Notifications(Student)","roleId":7}, {"menuId":0,"name":"Certificate Request","desc":"Certificate Request","parentId":17,"level":3,"link":"/academicBase/getListAcadStudentCertTrackDtls","linkDesc":"Academic: LIST OF CERTIFICATE REQUEST","roleId":7}, {"menuId":0,"name":"Scholarship Application","desc":"Scholarship Application","parentId":17,"level":3,"link":"/acadScholarship/listStSchEliAdvlDtls","linkDesc":"Academic: Scholarship : Search Eligible Scholarships(user)","roleId":7}, {"menuId":101,"name":"Hostel","desc":"Hostel","parentId":18,"level":2,"roleId":7}, {"menuId":100,"name":"Mess","desc":"Mess","parentId":101,"level":3,"roleId":7}, {"menuId":0,"name":"Mess Registration","desc":"Mess Registration","parentId":100,"level":4,"link":"/hmMessMgmt/messRegHistory","linkDesc":"HM: Mess: Search Mess Registration history for user","roleId":7}, {"menuId":60,"name":"Reports","desc":"Reports","parentId":18,"level":2,"roleId":7}, {"menuId":0,"name":"Request","desc":"Request","parentId":60,"level":3,"link":"/reportMaster/loadSchedulerPrograms","linkDesc":"APP : Search : Application  Programs(User)","roleId":7}, {"menuId":0,"name":"View","desc":"View","parentId":60,"level":3,"link":"/reportMaster/userAppSchReqList","linkDesc":"Search : Program Requests(User)","roleId":7}];
+	$(function() {
+		var htmlStr 	= '';
+		var currlevel 	= 0;
+		for(var i in dashboardData) {
+			var item = dashboardData[i];
+			if(item.level == currlevel) {
+				htmlStr += '</li>';
+				htmlStr += '<li>';
+				if(typeof item.link == "undefined") {
+					htmlStr += '	<span title="' + item.desc + '">' + item.name + '</span>';
+					htmlStr += '		<ul>';
+				} else {
+					htmlStr += '	<span class="treeLeaf" title="' + item.desc + '" onclick="return onDashboardTreemenuItemClick(' + item.roleId + ', \'' + item.link + '\', this);">' + item.name + '</span>';
+				}
+			} else if(item.level < currlevel) {
+				for(var j = currlevel; j >= item.level; j--) {
+					htmlStr += '	</li>';
+					if(j != item.level) {
+						htmlStr += '</ul>';
+					}
+				}
+				htmlStr += '<li>';
+				if(typeof item.link == "undefined") {
+					htmlStr += '	<span title="' + item.desc + '">' + item.name + '</span>';
+					htmlStr += '		<ul>';
+				} else {
+					htmlStr += '	<span class="treeLeaf" title="' + item.desc + '" onclick="return onDashboardTreemenuItemClick('+item.roleId+', \''+item.link+'\', this);">'+item.name+'</span>';
+				}
+			} else if(item.level > currlevel) {
+				htmlStr += '<li>';
+				if(typeof item.link == "undefined") {
+					htmlStr += '	<span title="'+item.desc+'">'+item.name+'</span>';
+					htmlStr += '		<ul>';
+				} else {
+					htmlStr += '	<span class="treeLeaf" title="'+item.desc+'" onclick="return onDashboardTreemenuItemClick('+item.roleId+', \''+item.link+'\', this);">'+item.name+'</span>';
+				}
+			}
+			currlevel = item.level; 
+		}
+		for(var j = currlevel; j > 1; j--) {
+			htmlStr += '	</ul>';
+			htmlStr += '</li>';
+		}
+		$("#dashboard_tree").append(htmlStr);
+		var isDbTreeBuilt = $("#dashboard_tree").treeview({
+								animated: "fast",
+								collapsed: true 
+					//			unique: true,
+					//			persist: "cookie"
+		});
+		if($("#dashboard_tree li:first").hasClass("expandable")) {
+			$("#dashboard_tree li:first span:first").click();
+		}
+		
+	});
+	
+	function onDashboardTreemenuItemClick(id, link, thisObj) {
+		if($(thisObj).attr("disabled") != "disabled") {
+			if(isCacheSupports) {
+				localStorage.clear();
+			}
+			$(".treeLeaf").attr("disabled", "disabled");
+			if(isMainDashboard) {
+				callAjaxByObj({	"url" : "/base/changeUserRole/" + id, 
+					"type" 	: "POST", 
+					"resp" 	: afterChangeFromMainDashboardDBRole(link),
+					"error" : afterChangeFromMainDashboardDBRoleErr()
+			  	});
+			} else {
+				redirectToTheReqPage(link);
+			}
+		}
+	}
+
+	function afterChangeFromMainDashboardDBRole(link) {
+		return function(response) {
+			redirectToTheReqPage(link);
+		};
+	}
+
+	function afterChangeFromMainDashboardDBRoleErr() {
+		return function() {
+			$(".treeLeaf").removeAttr("disabled");
+		};
+	}
+	
+</script>
+
+		<div class="clear"></div>
+	</div>
+	<div class="clear notificationDtls content notificationDtls_blk dashMTb_cmn" style="display: none;">
+		<div id="notifications">
+		  
+
+
+
+
+ 
+
+
+
+
+
+<link href="/aims/version1.0.93/css/common/jquery-ui.1.10.1.css" rel="stylesheet" type="text/css" />
+<link href="/aims/version1.0.93/css/common/jquery.multiselect.css" rel="stylesheet" type="text/css" />
+<link href="/aims/version1.0.93/css/common/jquery-ui-timepicker.css" rel="stylesheet" type="text/css" />
+<link href="/aims/version1.0.93/css/common/pagination.css" rel="stylesheet" type="text/css" />
+<link href="/aims/version1.0.93/css/common/form.css" rel="stylesheet" type="text/css" />
+<link href="/aims/version1.0.93/css/common/list_grid.css
+1947
+" rel="stylesheet" type="text/css" />
+<link href="/aims/version1.0.93/css/common/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
+
+<script src="/aims/version1.0.93/js/common/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/aims/version1.0.93/js/common/jquery-ui.1.10.1.js"></script>
+<script src="/aims/version1.0.93/js/common/jquery.multiselect.min.js"></script>
+<script src="/aims/version1.0.93/js/common/jquery.multiselect.filter.js"></script> 
+<script src="/aims/version1.0.93/js/common/jquery-ui-timepicker.js"></script>
+<script src="/aims/version1.0.93/js/common/pagination.js"></script>
+<script src="/aims/version1.0.93/js/common/form-validator.js"></script>
+<script src="/aims/version1.0.93/js/common/date_filter.js"></script>
+<script src="/aims/version1.0.93/js/common/valueset-validator.js"></script>
+<script src="/aims/version1.0.93/js/common/list_grid.js"></script>
+<script src="/aims/version1.0.93/js/notifications/list_user_notifications.js"></script>
+<style>
+	 .titl{
+		 color: black;
+	   	 font-size: 14px;
+	     font-weight: bold;
+	 }
+	 .formHrd{
+	     border-bottom: 1px solid #d1d2d3;
+	     margin-bottom: 1px;
+	     margin-top: 5px;
+	     padding-bottom: 4px;
+	     padding-left: 3px;
+	     padding-right: 3px;
+	 }
+	 .leftDiv {
+         width: 133px;
+    }
+    .rightDiv {
+         width: 124px;
+    }
+     .rightCombo {
+         width: 133px;
+    }
+	.col1{width: 600px !important;
+	      padding-left: 21px ;
+    }
+	  .dataLi,.gridLi{
+	 	  min-height: 14px !important;
+	 	 
+	 }   
+	 
+	 .col{
+	      /* width: 500px !important; */
+	 }
+	 .col2{
+	      width: 800px !important;
+	 }   
+	 
+	.emptyContent{margin-left: 241px !important;} 
+	.notifyName{color: black;}
+</style>
+<div class="main">
+	<div class="clear"></div>
+	<div class="fldDiv">
+	  
+		<form class="gridSearchForm srchDiv" autocomplete="off">
+			<div class="row leftCls"> 
+			   	<label class="leftDiv">Notification Name : </label>
+				<input type="text" class="rightDiv fld searchTextBox clr" id="notificationName">
+			</div>
+			<div class="row leftCls"> 
+			   	<label class="leftDiv">Notification Desc : </label>
+				<input type="text" class="rightDiv fld searchTextBox clr" id="notificationDesc">
+			</div>
+			<div class="row leftCls"> 
+				<label class="leftDiv" id="orderLab" >Order By : </label>
+				<select id="listOrderBy" class="rightCombo clr" >
+				</select>
+				<span class="order descending listOrderImg"></span>
+			</div> 
+			<div class="row" style="float: right;">
+				<input type="submit" class="btn" value="Search" id="searchNotifications" >
+				<input type="button" value="Clear" id="cancel" class="btn red">
+			</div>
+		</form>
+		<div class="clear"></div>
+	</div>
+	<div class="gridScrollContent gridVisibilityContent">
+	   <div class="gridContent">
+			<ul id="notificationsViewListUI" >	
+				<li class="gridLi" >
+					<span class="bld  col emptyContent">No Records</span>
+					<span class="bld col">&nbsp;</span>
+				</li> 
+			</ul>	
+		</div>
+	</div>
+	 <div class="gridContent gridIconContent gridVisibilityContent">
+		<ul id="notificationsViewListIcon">
+		</ul>
+	</div> 	 
+</div>
+	
+<div id="pagination"></div>
+<script>
+var listOrderByDefVal = null ;	
+var totalRecords 	  = null ;
+
+</script>
+
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var isMainDashboard = true;
+	$(function() {
+		$(document).on("click", ".cmn", function() {
+			changeDashTb($(this).attr("tbSNm"), $(this).attr("tbCNm"));
+		});
+		
+		var mDbCurTab = getUrlParam("dbTbNm");
+		if(mDbCurTab == "db") {
+			$(".dashboardDtls").click();
+		} else if(mDbCurTab == "notif") {
+			$(".notificationDtls").click();
+		}
+	});
+	
+	function changeDashTb(tbSNm, tbCNm) {
+		var obj = {
+				"tabNameSel"	: "." + tbSNm,
+				"tabCmnNameSel"	: "." + tbCNm,
+				"tabContSel"	: "." + tbSNm + "_blk",
+				"tabCmnContSel"	: "." + tbCNm + "_cmn",
+				"eventFlg"		: false
+			  };
+		changeTabByObj(obj);
+		if('notificationDtls' == tbSNm) {
+			loadNotifications();
+		}
+	}
+
+	function redirectToTheReqPage(link) {
+		$(".treeLeaf").removeAttr("disabled");
+		
+		// If the current URL contains already the query string in the menu link itself 
+		if(getQuery(link) != "") {
+			window.location = basePath + link + "&dbTbNm=mn&isMnDb=" + isMainDashboard;
+		} else {
+			window.location = basePath + link + "?dbTbNm=mn&isMnDb=" + isMainDashboard;
+		}
+	}
+	
+</script>
+
+					    <div class="clear"></div>
+				    </div>
+				    <div class="clear"></div>
+			    </div>
+			    <div class="clear"></div>
+			    <div class="footerMain" style="background: #003366">
+		        	<div class="footer">
+		        		
+
+
+<script>
+	$(function() {
+		$(".contentMainDiv").css("min-height", ($(document).height() - 125)+"px");
+		$('form:first *:input[type != hidden]:first').focus();
+		$('form:first *:input[readonly != readonly]:first').focus();
+		$('form:first *:input[disabled != disabled]:first').focus();
+		var errInd 			= false;
+		var exceptionStatus = "null";
+		var exceptionData 	= "null";
+		if("" != "") {
+			showException("");
+			errInd = true;
+		} else if(exceptionData != "" && exceptionData != "null") {
+			showException(exceptionData);
+			errInd = true;
+		} else if(exceptionStatus != "" && exceptionStatus != "null") {
+			showException(exceptionStatus);
+			errInd = true;
+		}
+		
+		if("" != "") {
+			$("").focus();
+		} else if("null" != "") {
+			$("null").focus();
+		} else if(false) {
+			$('null').focus();
+		}
+		if(errInd) {
+			
+		}
+		if(isCacheSupports && typeof localStorage.isAimsPageLoaded != "undefined") {
+			delete localStorage.isAimsPageLoaded;
+		}
+		//Add document help icon
+/* 		var appDocFileId = "";
+		if(appDocFileId != "") {
+			$(".contentMain").append('<span class="url_doc_help_icon" id="appPageHelp" title="Help Document"></span>');
+			$("#appPageHelp").css({	"position" : "absolute", 
+									"left" : $(".contentMainDiv").offset().left + 15 +
+											 $(".contentMainDiv").width(), 
+									"top" : "5px", "padding-bottom" : "inherit"});
+			$("#appPageHelp").click(function() {
+				window.top.location.href = basePath + "/base/appPageDocFileDownLoad/"+appDocFileId;
+			});
+		} */
+	});
+</script>
+<div style="font-size: 19px; float: right;">
+	<span class="prwdBy">Powered By </span>
+	<img alt="PLIANTO" src="/aims/version1.0.93/images/plianto_logo.png" class="prwdByImg" />
+</div>
+
+
+		        	</div>
+			    </div>
+			</div>
+		</div>
+	</body>
+</html>
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+        <input type = "text" id = "mytextbox">
+        <script>
+           /* window.addEventListener('load', (event)=>{
+                console.log("Page has been loaded");
+                console.log(event);
+            })*/
+            const element = document.getElementById('mytextbox');
+            element.addEventListener('change',(event) =>{
+                console.log(element.value);
+                console.log(event.target.value);
+            })
+        </script>
+    </body>
+</html>

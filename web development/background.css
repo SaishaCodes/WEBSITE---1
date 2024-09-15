@@ -1,0 +1,24 @@
+#back{
+    background-color: rgb(105, 9, 105);
+    background-image: url("balloon.jpg");
+    background-repeat: repeat;
+    background-attachment: scroll;
+  
+    
+    background: rgb(105, 9, 105), url("balloon.jpg") no-repeat scroll;
+}
+p{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: 80px;
+    font-variant: initial;
+
+    color:mediumorchid;
+    text-align: center;
+    text-decoration: double;
+    text-transform: uppercase;
+    text-indent: 100px;
+    letter-spacing: 10px;
+    word-spacing: 5px;
+
+}

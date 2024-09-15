@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basics of HTML</title>
+    </head>
+    <body>
+        <form method = "post" action = "">
+            <div>
+            <label>First name</label>
+            <input type = "text" id = "firstName" name = "firstname" placeholder = "enter your first name">
+        </div>
+        <div>
+
+            <label>Middle name</label>
+            <input type = "text" name = "middlename" id = "middlename" placeholder = "enter your middle name">
+        </div>
+        <div>
+            <label>Last name</label>
+            <input type = "text" id = "lastname" name = "lastname" placeholder = "enter your last name">
+        </div>
+        <div>
+            <label>age</label>
+            <input type = "int" id = "age" name = "age" placeholder = "enter your age">
+        </div>
+        <div>
+            <label>gender</label>
+            <input type = "radio" name = "gender" id = "gender1" value = "male">M
+            <input type = "radio" name = "gender" id = "gender2" value = "female">F
+            <input type = "radio" name = "gender" id = "gender3" value = "na">NA
+        </div>
+        <div>
+            <label>dob</label>
+            <input type = "datetime-local" name = "dob" id = "dob" >
+        </div>
+        <div>
+            <label>
+                address
+            </label>
+            <textarea name = "address" placeholder = "enter your address" id = "address"></textarea>
+        </div>
+        <div>
+            <label>hobbies</label>
+            <imput type = "checkbox" name = "hobbies" id = "hobby1" value = "reading">reading
+            <input type = "checkbox" name = "hobbies" id = "hobby2" value = "dancing">dancing
+        </div>
+        <div>
+        <select name = "review" id = "review-box">
+            <option>Select a review status</option>
+            <optgroup> Good
+                <option>nice</option>
+                <option>best</option>
+            </optgroup>
+            <optgroup label = "average">
+                <option>okay</option>
+                <option>can be better</option>
+            </optgroup>
+        </select>
+    </div>
+    <div>
+        <input type = "file" name = "user profile pic">
+    </div>
+        <input type = "submit">
+    </form>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+*{
+    background-color:olive;
+}
+
+p{
+    color: bisque;
+}
+
+#div1{
+    color: chartreuse;
+}
+
+.cl{
+    color:rgb(253, 102, 197)
+}
+
+div .ahtext{
+    text-decoration: none;
+}
+
+.htext:hover{
+    color:black;
+}

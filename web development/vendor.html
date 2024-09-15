@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HI</title>
+        <script src = "<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <p></p>
+        <div id = "first_element"></div>
+        <div class = " first_class"></div>
+        <select id = "controldiv">
+            <option value = '1'>show</option>
+            <option value = "0">hide</option>
+        </select>
+        <button type = "button" onclick = "alert('hello click next')">click me</button>
+        <script src = "<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script type = "text/javascript">
+            $('#controldiv').change(function(){
+                alert('button clicked')
+            })
+        </script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>literally anything i want</title>
+    </head>
+    <body>
+        <button id = "controldiv">click  me</button>
+        <div id = "animatediv" style = "background-color: deeppink; height: 100px; width: 100px"></div>
+
+        <script type  = "text/javascript">
+            $('#controldiv').click(function(){
+                $("#animatediv").animate({
+                    height: '1000px',
+                    width: '1000px'
+                }, 5000)            }
+                )
+        </script>
+    </body>
+</html>
